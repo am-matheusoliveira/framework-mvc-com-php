@@ -1,0 +1,245 @@
+Data: 24/04/2023 11:45
+
+Descrição:
+    Nesse projeto realizamos o desenvolvimento de um mini-framework todo feito em PHP com Orientação a Objetos e todo o Padrão MVC,
+    todo esse mateiral tem origem do Curso MVC em PHP do Canal WDEV.
+
+    Tudo oque eu fiz foi realizar o desenvolvimento desse projeto junto ao seu criador Original.
+    
+Playlist do Curso: https://www.youtube.com/playlist?list=PL_zkXQGHYosGQwNkMMdhRZgm4GjspTnXs
+
+
+-----------------ESTRUTURA DE PASTAS E ARQUIVOS DESTE PROJETO-------------------
+    MVC-COM-PHP
+        app
+            Controller
+                admin
+                    Alert.php     -- mensagens de erros, sucessos e avisos
+                    Home.php      -- tela principal do painel
+                    Login.php     -- login do usuário
+                    Page.php      -- configurações extras que são usadas por todo o sistema do painel admin como a paginação dos dados
+                    Testimony.php -- esse controller cuida de toda a parte dos depoimentos como cadastra atualizar e excluir
+                    User.php      -- usuários que acessam o painel de ADM
+                Api
+                    Api.php
+                    Auth.php - JWT
+                    Testimony.php
+                    User.php
+                Pages
+                    About.php
+                    Home.php
+                    Page.php
+                    Testimony.php
+            Http
+                Middleware
+                    Api.php
+                    Cache.php
+                    JWTAuth.php - JWT
+                    Maintenance.php
+                    Queue.php
+                    RequireAdminLogin.php
+                    RequireAdminLogout.php
+                    UserBasicAuth.php
+                Request.php
+                Response.php
+                Router.php
+            Model
+                Entity
+                    Organization.php
+                    Testimony.php
+                    User.php
+            Session
+                Admin
+                    Login.php
+            Utils
+                Cache
+                  File.php  
+                View.php
+        includes
+            app.php
+        resouces
+            css
+                pages.css
+            files
+            images
+                icons
+                    delete_button.png
+                    Sankhya_sistem_favicon_32x32.png
+                img_grupo.png
+            js
+                pages.js
+            view
+                admin
+                    alert
+                        status.html
+                    menu
+                        box.html
+                        link.html                
+                    modules
+                        home
+                            index.html
+                        testimonies
+                            delete.php
+                            form.html
+                            index.html
+                            item.html
+                        users
+                            delete.php
+                            form.html
+                            index.html
+                            item.html                            
+                    pagination
+                        box.html
+                        link.html
+                    login.html
+                    page.html
+                    panel.html
+                    
+                pages
+                    pagination
+                        box.html
+                        link.html
+                    testimony
+                        item.html
+                    about.html
+                    footer.html
+                    header.html
+                    home.html
+                    page.html
+                    testimonies.html
+        routes
+            admin
+                home.php
+                login.php
+                testimonies.php
+                users.php
+            api
+                v1
+                    auth.php - JWT
+                    default.php
+                    testimonies.php
+                    users.php
+                v2
+            admin.php
+            api.php
+            page.php        
+        vendor
+            vendor(s)
+        .env
+        .env.example
+        .htaccess
+        composer.json
+        composer.lock
+        index.php
+
+--------------------------------------------------------------------------------
+Conceitos:
+    Closure: oque ? Isso nada mais e que uma variavel que contem uma função,
+    ou um array com uma variavel ou mais que contem uma função,
+    também conhecido como função anonima, podemos usar esse metodo junto com funções do tipo callback.
+
+PROJETO FEITO COM O PADRÃO - MVC:
+    M = MODEL
+    V = VIEW
+    C = CONTROLLER
+
+----------------------------------ANOTAÇÕES SOBRE AS AULAS--------------------------------------------
+
+1º AULA: FINALIZADA
+    Conhecendo como o MVC funciona, instalação do composer,
+    e configuração do arquivo composer.json.
+
+    Também nesse projeto iremos usar o padrão PSR-4:
+    Mais detalhers sobre ele: https://www.treinaweb.com.br/blog/psr-4-a-recomendacao-de-autoload-do-php#:~:text=A%20PSR%2D4%20%C3%A9%20o,em%20implementar%20autoload%20no%20projeto.,
+    Foi iniciado a criação da classe que ira nós permitir trabalhar com URL-amigaveis usando REGEX e .htaccess,
+    criado os arquivos Request, Response para tratamento de nossas Rotas.
+
+
+
+2º AULA: FINALIZADA
+    Nessa aula iniciamos toda a criação de um sistema de rotas utilizadando URL-amigaveis
+    Implementamos os CoNtrollers (Router.php Request.php Response.php) e uma nova view chamada (about.html)
+    também Implementamos o arquivo .htaccess para trabalhar com as URLs no nosso sistema
+    //
+    Obs: ficar de olho em todo o conteudo de forma detalhada devido sua complexidade, e por quem e ensinado
+    esse curso, tudo que esta aqui e de um alto nivel de complexidade.
+
+3º AULA: FINALIZADA
+    Nessa aula iremos implementar um sistema de crud onde iremos cadastrar incluir deletar e alterar comentarios de usuários,
+    usaremos duas bibliotecas do repositorio do composer do william para nos ajudar-mos, a 1º e responsavel por cuidar de nossas,
+    variaveis de ambiente um arquivo .env assim como no laravel, a 2º e uma especie de QueryBuilder como e feito no laravel também.
+    
+    Implementamos ainda nessa aula nosso banco de dados para cadastro dos comentarios,
+    metodos Implementados(cadastrar) ainda faltam editar e deletar que seram vistos nas proximas aulas.
+
+    Implementamos as novas views de nosso projeto para a tela de (testemunhos)
+
+    tags: crud, paginacao e variavel de ambiente.
+
+4º AULA: FINALIZADA
+    Nessa aula realizamos a implementação de um Middleware para checar se o site/sistema está em modo de manutenção,
+    para isso criamos uma nova variável no arquivo '.env' criamos dois novos arquivos, 1º Queue, 2º Maintenance,
+    esse 2º arquivo contem o método resposta se o site está em manutenção ou não.
+
+    Como bem sabemos, os Middlewares são pequenas camadas de códigos que nos ajudam a proteger nossa aplicação,
+    são como funções auxiliares que podem ser chamadas em toda nossa aplicação
+
+5º AULA: FINALIZADA
+    Nessa aula iremos criar alguns middlewares para gerenciar os acessos dos usuários ao nosso painel de administração,
+    Criado um novo arquivo chamado status.html com ele podemos definir os stados de alertas da aplicação,
+    alem disso criamos a tela de login junto com a rota de POST para logar na área de login do sistema.
+
+    Criamos os middlewares para logar e deslogar os usuários.
+
+6º AULA: FINALIZADA
+    Nesta aula iremos implementar um painel de administração completo,
+    onde sera possivel cadastrar comentarios, usuários e outras configurações em nosso sistema,
+
+    Finalizamos essa aula, criando as duas telas de cadastro, depoimentos e usuários
+    Temos todo o crud completo, com seus arquivos de rota feitos direitinho,
+    seus controladores e models.
+
+
+7º AULA: FINALIZADA
+    Nessa aula iremos criar rotas para consumo de APIs, [GET, POST]...etc
+    Iremos usar o POSTMAN para realizar os testes de consumo dessas APIs
+
+    OBS: APIs podem ser versionadas para nível de controle do sistema,
+    esse controle e para casos de mudança de algum padrão da aplicação
+
+    Nessa aula ainda realizamos a alteração na classe Router para tratar o erro de / no final
+    da URL, fizemos a criação de um novo middleware para converter nosso Response e um tipo json
+    criamos rotas de get para nossas 'APIs'. 
+
+
+8º AULA: FINALIZADA
+    Nessa aula iremos realizar a implementação de HTTP Basic Auth,
+    que e uma forma de protegermos nossas rotas de APIs.
+
+    Aqui usaremos duas variaveis 1º PHP_AUTH_USER I 2º PHP_AUTH_PW
+    Essas são constantes do servidor WEB, tratam a autenticação do usuário,
+    para uso do Basic Auth HTTP.
+
+    Finalizada essa aula, Aqui criamos as APIs para 
+    Consultar todos ou Consultar 1, Atualizar 1 e excluir 1
+    do nossos depoimentos e usuários.
+
+9º AULA: FINALIZADA
+    Nessa aula implementamos o uso da Biblioteca JWT em PHP,
+    que é outra forma de autenticarmos nossos usuários ou aplicações,
+    para consumo de nossas API(s), debagamos nosso Token para validá-lo
+    e criamos novas rotas e middlewares para o correto uso dessa Biblioteca
+
+10º AULA: implementando um sistema de cache FINALIZADA
+    Nessa aula iremos incluir em nosso FrameWork um pequeno sistema de cache
+    para usarmos em nossa aplicação, teremos duas versões a 1º usando o JWT
+    e a 2º usando o HTTP BASIC AUTH,
+
+    ------------------------------------------------------------------------
+    Aula finalizada, implementamoso sistema de cache em discom agora falta colocarmos
+    o mesmo codigo na outra versão que o HTTP BASIC AUTH
+
+
+11º AULA: FINALIZADA
+    Nessa aula implementamos o css e javacript personalizado, inclusive trabalhamos na visualização,
+    da quantidade de paginações por bloco onde mostramos para os usuários apenas uma quantidade que foi definida no .env

@@ -1,0 +1,248 @@
+Data: 21/06/2024 10:00
+
+Descrição:
+    Nesse bloco de notas temos mapeado todas as rotas que foram criadas no sistema, desde rotas da pagina inicial ate as rotas das Api's,
+    temos também varios exemplos de como usa-las junto com o Postman.
+
+    Esse bloco de notas e um complemento do outro bloco, que descreve sobre esse projeto e sua origem.
+
+
+-----------------------------------------EXPLICAÇÕES INICIAIS-------------------------------------------
+
+# todas as rotas do tipo 'GET' são o unico tipo que devem ser 'CACHEADA'S' !!
+# as rotas que devem estar em cache, são aquelas que são acessadas pelos usuários do sistema, como pessoas que acessam um site.
+
+# temos dois middleware para autenticação de api's o 1º user-basic-auth e o 2º jwt-auth, para usa-los basta adicionar a rota que precisa.
+    Exemplo: 
+        // ROTA DE LISTAGEM DE DEPOIMENTOS
+        $obRouter->get('/api/v1/testimonies', [
+            'middlewares' => [
+                'api',
+                'cache'
+                'user-basic-auth', // podemos usar este middleware
+                'jwt-auth'         // ou este middleware, podemos usar somente um dos dois
+            ],
+            function($request){
+                return new Response(200, Api\Testimony::getTestimonies($request), 'application/json');
+            }
+        ]);
+
+-----------------------------------ROTAS DA APLICAÇÃO i OBSERVAÇÕES---------------------------------------
+
+# aqui iremos colocar todas as rotas que temos nesse projeto, tantos as de api's quanto as demais.
+
+OBS: 
+    AS ROTAS ABAIXO FORAM TESTADAS USANDO O POSTMAN, NELE PODEMOS FAZER VIA 'form-data' ou 'RAW - JSON',
+    CASO FORMOS TESTAR ROTAS DO TIPO 'POST', 'PUT' ou 'DELETE'.
+
+Gerar Token JWT:
+    vá na rota: /api/v1/auth, passe um Json com o email e a senha e o Token sera Gerado.
+
+Postman - Authorization:
+    BasicAuth: crie uma nova request, vá na aba Authorization e selecione Basic Auth.
+    Token JWT: crie uma nova request, vá na aba Authorization e selecione Bearer Token.
+
+ROTAS-DO-SISTEMA:
+
+    ROTAS-GERAIS        
+        ROTA: /home
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/
+        
+        ROTA: /sobre
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/sobre
+        
+        ROTA: /depoimentos
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/depoimentos
+        
+        ROTA: /depoimentos
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/depoimentos
+        EXEMPLO JSON:
+            { 
+                "nome":"Matheus Pergfgdgeira", 
+                "mensagem":"Nada a cogdfgdfmentar" 
+            }
+        
+        ROTA: /admin
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin
+        OBS: ESTA ROTA SERA USADA QUANDO O USUÁRIO ESTIVER LOGADO.
+
+        ----------------------------------------------------------------------------------------
+        ROTA: /admin/login
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/login
+
+        ROTA: /admin/login
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/login
+        EXEMPLO JSON:
+            {
+                "email":"matheus.pereira@gmail.com",
+                "senha":"matheus.pereira@gmail.com"
+            }
+
+        ROTA: /admin/logout
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/logout
+        ----------------------------------------------------------------------------------------
+
+    ADMIN-USUÁRIOS:
+        ROTA: /admin/users
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users
+
+        ROTA: /admin/users/new
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/new
+
+        ROTA: /admin/users/new
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/new
+        EXEMPLO:
+            {
+                "nome":"MATHEUS OLIVEIRA",
+                "email":"matheus@hotmail.com",
+                "senha":"matheus@hotmail.com"
+            }
+
+        ROTA: /admin/users/{id}/edit
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/{id}/edit
+
+        ROTA: /admin/users/{id}/edit
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/{id}/edit
+        EXEMPLO:
+            {
+                "nome":"MATHEUS OLIVEIRA",
+                "email":"matheus@hotmail.com",
+                "senha":"matheus@hotmail.com"
+            }
+
+        ROTA: /admin/users/{id}/delete
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/{id}/delete
+
+        ROTA: /admin/users/{id}/delete
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/{id}/delete    
+
+    ADMIN-TESTEMUNHOS:
+        ROTA: /admin/testimonies
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies
+
+        ROTA: /admin/testimonies/new
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/new
+
+        ROTA: /admin/testimonies/new
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/new
+        EXEMPLO:
+        {
+            "nome":"nome_pessoa",
+            "mensagem":"mensagem_pessoa"
+        }
+
+        ROTA: /admin/testimonies/{id}/edit
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/{id}/edit
+
+        ROTA: /admin/testimonies/{id}/edit
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/{id}/edit
+        EXEMPLO:
+        {
+            "nome":"nome_pessoa",
+            "mensagem":"mensagem_pessoa"
+        }
+
+        ROTA: /admin/testimonies/{id}/delete
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/{id}/delete
+
+        ROTA: /admin/testimonies/{id}/delete
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/{id}/delete
+
+    API-USUÁRIOS:
+        ROTA: /api/v1/users
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users
+
+        ROTA: /api/v1/users/me
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users/me
+
+        ROTA: /api/v1/users/{id}
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users/{id}
+
+        ROTA: /api/v1/users
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users
+        EXEMPLO:
+            {
+                "nome":"MATHEUS OLIVEIRA",
+                "email":"matheus@hotmail.com",
+                "senha":"matheus@hotmail.com"
+            }
+
+        ROTA: /api/v1/users/{id}
+        TIPO: PUT
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users/{id}
+        EXEMPLO:
+            {
+                "nome":"MATHEUS OLIVEIRA",
+                "email":"matheus@hotmail.com",
+                "senha":"matheus@hotmail.com"
+            }
+
+        ROTA: /api/v1/users/{id}
+        TIPO: DELETE
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users/{id}
+
+    API-TESTEMUNHOS:    
+        ROTA: /api/v1/testimonies
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/testimonies
+
+        ROTA: /api/v1/testimonies/{id}
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/testimonies/{id}
+
+        ROTA: /api/v1/testimonies
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/testimonies
+        EXEMPLO:
+            {
+                "nome":"nome_pessoa",
+                "mensagem":"mensagem_pessoa"
+            }
+
+        ROTA: /api/v1/testimonies/{id}
+        TIPO: PUT
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/testimonies/{id}
+        EXEMPLO:
+            {
+                "nome":"nome_pessoa",
+                "mensagem":"mensagem_pessoa"
+            }
+
+        ROTA: /api/v1/testimonies/{id}
+        TIPO: DELETE
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/testimonies/{id}    
+    
+    API-OUTRAS-ROTAS
+        ROTA: /api/v1
+        TIPO: GET
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1
+        
+        ROTA: /api/v1/auth
+        TIPO: POST
+        URL: http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/auth

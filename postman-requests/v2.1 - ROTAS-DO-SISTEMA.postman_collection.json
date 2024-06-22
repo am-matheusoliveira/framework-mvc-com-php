@@ -1,0 +1,1041 @@
+{
+	"info": {
+		"_postman_id": "7e94aebc-3c74-4bfb-ab3e-55086ae2e803",
+		"name": "ROTAS-DO-SISTEMA",
+		"description": "**Rotas:**\n\nNessa collection temos todas as Rotas criadas durante o Curso.\n\nTemos as Rotas de Api's e as demais rotas para navegação e acesso ao sistema.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36193510"
+	},
+	"item": [
+		{
+			"name": "GERAL",
+			"item": [
+				{
+					"name": "Home",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sobre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/sobre",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"sobre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Depoimentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/depoimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"depoimentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Novo Depoimento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Matheus Pergfgdgeira\",\r\n    \"mensagem\":\"Nada a cogdfgdfmentar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/depoimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"depoimentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tela de Login - Logado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Rotas gerais do sistema, **\\[Home, Sobre, Depoimentos\\]**"
+		},
+		{
+			"name": "ADMIN-LOGIN",
+			"item": [
+				{
+					"name": "Tela de Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realizar Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"matheus.pereira@gmail.com\",\r\n    \"senha\":\"matheus.pereira@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realizar Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Nessa pasta teremos as **Rotas de Acesso do Admin.**"
+		},
+		{
+			"name": "ADMIN-USUÁRIOS",
+			"item": [
+				{
+					"name": "Listar Usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Novo Usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"users",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Novo Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"MATHEUS OLIVEIRA\",\r\n    \"email\":\"matheus@hotmail.com\",\r\n    \"senha\":\"matheus@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"users",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/{id}/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"users",
+								"{id}",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"MATHEUS OLIVEIRA\",\r\n    \"email\":\"matheus@bol.com\",\r\n    \"senha\":\"matheus@bol.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/{id}/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"users",
+								"{id}",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Usuário",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/{id}/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"users",
+								"{id}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/users/{id}/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"users",
+								"{id}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Rotas do Usuário:**\n\nAqui teremos todas as Rotas do **usuário**, com o **CRUD**."
+		},
+		{
+			"name": "ADMIN-TESTEMUNHOS",
+			"item": [
+				{
+					"name": "Listar Depoimentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"testimonies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Novo Depoimento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"testimonies",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Novo Depoimento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"seu nome\",\r\n    \"mensagem\":\"sua mensagem\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"testimonies",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Depoimento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/{id}/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"testimonies",
+								"{id}",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Depoimento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"nome_pessoa\",\r\n    \"mensagem\":\"mensagem_pessoa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/{id}/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"testimonies",
+								"{id}",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Depoimento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/{id}/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"testimonies",
+								"{id}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Depoimento",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/admin/testimonies/{id}/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"admin",
+								"testimonies",
+								"{id}",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Rotas do Testemunhos:**\n\nAqui teremos todas as Rotas do **Testemunhos**, com o **CRUD**."
+		},
+		{
+			"name": "API-USUÁRIOS",
+			"item": [
+				{
+					"name": "Listar Usuários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Usuário Atual",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Individual do Usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"users",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Novo Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hdGhldXMucGVyZWlyYUBnbWFpbC5jb20ifQ.T91ifCQB5mainL6yh9ALKOIWzUt5whe8wWH0QILC4ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"MATHEUS OLIVEIRA PEREIRA\",\r\n    \"email\":\"matheusmaresia@hotmail.com\",\r\n    \"senha\":\"matheusmaresia@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hdGhldXMucGVyZWlyYUBnbWFpbC5jb20ifQ.T91ifCQB5mainL6yh9ALKOIWzUt5whe8wWH0QILC4ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"OLIVEIRA PEREIRA\",\r\n    \"email\":\"matheusmaresia@hotmail.com\",\r\n    \"senha\":\"matheusmaresia@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"users",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Usuário",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hdGhldXMucGVyZWlyYUBnbWFpbC5jb20ifQ.T91ifCQB5mainL6yh9ALKOIWzUt5whe8wWH0QILC4ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/users/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"users",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Aqui teremos todas as Rotas de **Api do Usuário**."
+		},
+		{
+			"name": "API-TESTEMUNHOS",
+			"item": [
+				{
+					"name": "Listar Depoimentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/testimonies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"testimonies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta Individual do Depoimento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/testimonies/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"testimonies",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Novo Depoimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hdGhldXMucGVyZWlyYUBnbWFpbC5jb20ifQ.T91ifCQB5mainL6yh9ALKOIWzUt5whe8wWH0QILC4ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"nome_pessoa\",\r\n    \"mensagem\":\"mensagem_pessoa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/testimonies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"testimonies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Depoimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hdGhldXMucGVyZWlyYUBnbWFpbC5jb20ifQ.T91ifCQB5mainL6yh9ALKOIWzUt5whe8wWH0QILC4ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"olá, nome_pessoa\",\r\n    \"mensagem\":\"olá, mensagem_pessoa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/testimonies/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"testimonies",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Depoimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im1hdGhldXMucGVyZWlyYUBnbWFpbC5jb20ifQ.T91ifCQB5mainL6yh9ALKOIWzUt5whe8wWH0QILC4ik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/testimonies/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"testimonies",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Aqui teremos todas as Rotas de **Api do Testemunhos**."
+		},
+		{
+			"name": "API-OUTRAS-ROTAS",
+			"item": [
+				{
+					"name": "Rota Raiz API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autorização API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"matheus.pereira@gmail.com\",\r\n    \"senha\":\"matheus.pereira@gmail.com\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/pessoal-projetos-web/projetos-pessoais/mvc-com-php-jwt/api/v1/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"pessoal-projetos-web",
+								"projetos-pessoais",
+								"mvc-com-php-jwt",
+								"api",
+								"v1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Nesta pasta teremos outras rotas da nossa Api, como a rota que gera o Token JWT e a rota que lista o usuário conectado."
+		}
+	]
+}
